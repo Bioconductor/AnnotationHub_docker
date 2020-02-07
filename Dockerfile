@@ -27,8 +27,8 @@ ENV CONFIGURE_OPTS --disable-install-doc
 
 #RUN source ~/.bash_profile
 
-RUN rbenv install -v 2.2.1
-RUN rbenv global 2.2.1
+RUN rbenv install -v 2.5.0
+RUN rbenv global 2.5.0
 
 RUN cd /tmp && curl -LO https://raw.githubusercontent.com/Bioconductor/AnnotationHubServer3.0/master/Gemfile && \
     gem install bundler && bundle install
