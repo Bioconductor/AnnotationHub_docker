@@ -1,6 +1,6 @@
 # call me bioconductor/annotationhub_docker
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 EXPOSE 3000
 
@@ -27,8 +27,8 @@ ENV CONFIGURE_OPTS --disable-install-doc
 
 #RUN source ~/.bash_profile
 
-RUN rbenv install -v 2.3.3
-RUN rbenv global 2.3.3
+RUN rbenv install -v 2.6.5
+RUN rbenv global 2.6.5
 
 RUN cd /tmp && curl -LO https://raw.githubusercontent.com/Bioconductor/AnnotationHubServer3.0/master/Gemfile && \
     gem install bundler && bundle install

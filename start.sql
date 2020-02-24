@@ -1,6 +1,13 @@
 drop database if exists annotationhub;
 create database annotationhub;
-grant all privileges on annotationhub.* to 'hubuser'@'%' identified by 'MYSQL_REMOTE_PASSWORD' with grant option;
 flush privileges;
-grant all privileges on annotationhub.* to 'ahuser'@'%' identified by 'MYSQL_REMOTE_PASSWORD' with grant option;
+DROP USER IF EXISTS 'hubuser'@'%';
+flush privileges;
+CREATE USER 'hubuser'@'%' IDENTIFIED BY 'MYSQL_REMOTE_PASSWORD';
+GRANT ALL PRIVILEGES ON annotationhub.* TO 'hubuser'@'%' WITH GRANT OPTION;
+flush privileges;
+DROP USER IF EXISTS 'ahuser'@'%';
+flush privileges;
+CREATE USER 'ahuser'@'%' IDENTIFIED BY 'MYSQL_REMOTE_PASSWORD';
+GRANT ALL PRIVILEGES ON annotationhub.* TO 'ahuser'@'%' WITH GRANT OPTION;
 flush privileges;
